@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Guide</title>
+    <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+</head>
+<body>
+    <!-- <img class="bg" src="Mountain.jpg" alt="Mountain image"> -->
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <h1>Travel Guide</h1>
+            <nav>
+                <ul>
+                    <li><a href="#destinations">Destinations</a></li>
+                    <li><a href="#attractions">Attractions</a></li>
+                    <li><a href="#accommodations">Accommodations</a></li>
+                    <li><a href="#tips">Travel Tips</a></li>
+                    <li><a href="#reviews">User Reviews</a></li>
+                    <li><a href="#map">Interactive Map</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Section -->
+    <main>
+        <section id="destinations" class="destinations-section">
+            <div class="container">
+                <h2>Top Destinations</h2>
+                <p>Discover amazing places to visit around the world.</p>
+                <!-- Add your destination content here -->
+                <div class="row">
+                    <div class="col-md-4"> 
+                        <div class="card"> 
+                            <img src="Flowergarden.jpg" class="card-img-top" alt="Destination 1"> 
+                            <div class="card-body"> 
+                                <h5 class="card-title">Keukenhof Gardens in Lisse, Netherlands</h5> 
+                                <p class="card-text">Known as the "Garden of Europe," it showcases over 7 million vibrant tulips, daffodils, and hyacinths each spring.</p> 
+                                <a href="#" class="btn btn-primary">Learn More</a> 
+                            </div> 
+                        </div> 
+                    </div> 
+                    <div class="col-md-4"> 
+                        <div class="card"> 
+                            <img src="waterfall.jpg" class="card-img-top" alt="Destination 2"> 
+                            <div class="card-body"> 
+                                <h5 class="card-title">Angel Falls in Venezuela</h5> 
+                                <p class="card-text">Tallest uninterrupted waterfall, cascading an astonishing 979 meters (3,212 feet) from the Auyantepui mountain.
+                                    One of the most beautiful waterfalls in the world</p> 
+                                <a href="#" class="btn btn-primary">Learn More</a> 
+                            </div> 
+                        </div> 
+                    </div> 
+                    <div class="col-md-4"> 
+                        <div class="card"> 
+                            <img src="tajmahal.jpg" class="card-img-top" alt="Destination 3"> 
+                            <div class="card-body"> 
+                                <h5 class="card-title">Taj Mahal in Agra, India</h5> 
+                                <p class="card-text">Iconic white marble mausoleum built by Emperor Shah Jahan in memory of his beloved wife Mumtaz Mahal, symbolizing eternal love and beauty.</p> 
+                                <a href="#" class="btn btn-primary">Learn More</a> 
+                            </div> 
+                        </div> 
+                    </div> 
+                </div>
+            </div>
+        </section>
+
+        <section id="attractions" class="attractions-section">
+            <div class="container">
+                <h2>Popular Attractions</h2>
+                <p>Explore must-see attractions in various locations.</p>
+                <!-- Add your attractions content here -->
+            </div> 
+            <div id="attractions-container">
+                <img src="image10.jpg" alt="Beautiful Photo">
+            </div>
+        </section>
+        
+
+        <section id="accommodations" class="accommodations-section">
+            <div class="container">
+                <h2>Accommodations</h2>
+                <p>Find the best places to stay during your travels.</p>
+                <!-- Add your accommodations content here -->
+            </div>
+            <div id="accommodations-container">
+                <img src="image11.jpg" alt="Hotel image">
+            </div>
+        </section>
+
+        <section id="tips" class="tips-section">
+            <div class="container">
+                <h2>Travel Tips</h2>
+                <p>Get helpful tips and advice for your journeys.</p>
+                <!-- Add your travel tips content here -->
+                <p>Pack your bags with confidence—Travel Guide's travel plans are your passport to a hassle-free journey.</p>
+            </div>
+        </section>
+
+        <section id="reviews" class="reviews-section">
+            <div class="container">
+                <h2>User Reviews</h2>
+                <p>Read reviews from other travelers and share your own experiences.</p>
+                <!-- Add your user reviews content here -->
+            </div>
+        </section>
+
+        <section id="map" class="map-section">
+            <div class="container">
+                <h2>Interactive Map</h2>
+                <p>Explore destinations and attractions on our interactive map.</p>
+                <!-- Add your interactive map content here -->
+                <div id="map-container"></div>
+               
+            </div>
+        </section>
+
+        <!-- Login/Register Section --> 
+        <section id="login" class="login-section"> 
+            <div class="container"> 
+                <h2>Login/Register</h2> 
+                <form action="auth.php" method="post"> 
+                    <input type="text" name="username" placeholder="Username" required>
+                    <input type="password" name="password" placeholder="Password" required> 
+                    <button type="submit" name="register">Register</button>
+                    <button type="submit" name="login">Login</button> 
+                </form> 
+            </div> 
+        </section> 
+
+        <form action="" method="post" class="mb-4">
+            <div class="form-group">
+                <textarea name="review" class="form-control" rows="3" placeholder="Write your review..." required></textarea>
+            </div>
+            <button type="submit" name="submit_review" class="btn btn-primary">Submit Review</button>
+        </form>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Travel Guide. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Link to your JavaScript file -->
+    <script src="scripts.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Initialize the map
+            var map = L.map('map-container').setView([51.505, -0.09], 13);
+        
+            // Add a tile layer to the map
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+        
+            // Add a marker to the map
+            var marker = L.marker([51.5, -0.09]).addTo(map)
+                .bindPopup('<b>Hello world!</b><br />I am a popup.')
+                .openPopup();
+        
+            // Add an event listener to get the user's location
+            map.on('click', function (e) {
+                var latlng = e.latlng;
+                L.popup()
+                    .setLatLng(latlng)
+                    .setContent('You clicked the map at ' + latlng.toString())
+                    .openOn(map);
+            });
+        });
+        </script>
+        
+        
+        
+        
+        
+        
+    
+</body>
+</html>
