@@ -44,7 +44,7 @@ To run this project locally, follow these steps:
    code .
    ```
 4. **Start a local server to view the website:**
-   After opening opening the project in code editor just run the html file and you will be able to see the website in chrome.
+   After opening the project in code editor just run the html file and you will be able to see the website in chrome.
 Once the project is set up, you can view and interact with the website by opening it in your web browser. Feel free to explore the different sections and functionalities.
 
 ## Contributing
